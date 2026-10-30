@@ -1,0 +1,9 @@
+torch==2.7.1
+torchvision==0.22.1
+
+numpy==1.26.4
+pandas==2.2.3
+scipy==1.13.1
+anndata==0.10.9
+shapely==2.0.6
+cvxpy==1.6.1

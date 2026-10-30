@@ -1,0 +1,27 @@
+# Python environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Package build
+*.egg-info/
+build/
+dist/
+
+# IDE
+.idea/
+.vscode/
+
+# Experiment outputs
+results/
+save_environ/
+checkpoints/
+
+# Logs
+*.log
+
+# Audit reports
+experiments/data_audit.txt
