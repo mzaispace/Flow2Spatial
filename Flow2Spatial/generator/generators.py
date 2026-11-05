@@ -1,4 +1,35 @@
-from .design_utils import *
+
+# from .design_utils import *
+# import sys
+import os
+# sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import pickle
+
+
+from Flow2Spatial.generator.design_utils import (
+    transfer_mask_rw,
+    traverse_generate_vertex,
+    traverse_poly_search_radis,
+    iterative_channel_count
+
+)
+# from .design_utils import (
+#     transfer_mask_rw,
+#     traverse_generate_vertex,
+#     traverse_poly_search_radis,
+#     iterative_channel_count
+# )
+
+from Flow2Spatial.generator.utils import (
+    similar_generator
+)
+
+import numpy as np
+
+
+
+
 def omics(adata, mask, dir_run='./save_environ'):
     #based on reference spatial omics
     #input:
@@ -28,7 +59,6 @@ def histology(line_row, line_col, mask, segments, channel_intensity, radius=[0.5
     #based on segments by histological information(including: spatial clusters)
     #input
     #segments: list
-
     point_row, point_col = np.where(mask)
     max_rc = max(max(point_row), max(point_col))
 
@@ -70,7 +100,7 @@ def histology(line_row, line_col, mask, segments, channel_intensity, radius=[0.5
         pickle.dump(length_coef, handle)
 
     ## computation
-    from .utils import *
+    # from .utils import *
     ### will be accelerated by mulitiprocess in later version
     segments_len = len(segments)
     for seg_i in range(segments_len):
